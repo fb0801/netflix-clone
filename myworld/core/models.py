@@ -17,3 +17,8 @@ class Profile(models.Model):
     name = models.CharField(max_length=255)
     age_limit = models.CharField(max_length=10, choices=AGE_CHOICES)
     uuid=models.UUIDField(default=uuid.uuid4)
+
+
+class Movie(models.Model):
+    title=models.CharField(max_length=225)
+    description=
