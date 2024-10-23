@@ -15,7 +15,7 @@ MOVIE_CHOICES =(
 
 
 class CustomUser(AbstractUser):
-    profiles = models.ManyToManyField('profile', null=True, blank=True)
+    profiles = models.ManyToManyField('profile', blank=True)
 
 
 class Profile(models.Model):
