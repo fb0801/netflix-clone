@@ -2,7 +2,7 @@
 A netflix clone using Django
 
 ## Issues:
-
+- ensure dependencaies inside virtual env are installed
 
 
 ## Changes made:
