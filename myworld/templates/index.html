@@ -8,8 +8,9 @@
     {% block others %} 
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     {% endblock others %}
-</head>
-<body class="bg-black text-gray-100">
+{% block content %}
+
+{% endblock content %}
     <nav class="flex justify-between items-center py-3 px-4 fixed w-full z-50">
         <div class="w-6/12">
             <img src="assets/netflix.png" alt="logo" class="w-5/12 md:w-2/12">
@@ -98,5 +99,4 @@
             <li>By OtchereDev</li>
         </ul>
     </footer>
-</body>
-</html>
+    {% endblock content%}
