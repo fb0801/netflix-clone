@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}
 
-{% endblock title%}
+{% endblock title %}
 
 
     {% block others %} 
@@ -10,10 +10,10 @@
     {% endblock others %}
 {% block content %}
 
-{% endblock content %}
+
     <nav class="flex justify-between items-center py-3 px-4 fixed w-full z-50">
         <div class="w-6/12">
-            <img src="assets/netflix.png" alt="logo" class="w-5/12 md:w-2/12">
+            <img src="{% static "netflix.png" %} alt="logo" class="w-5/12 md:w-2/12">
         </div>
 
         <div>
@@ -99,4 +99,4 @@
             <li>By OtchereDev</li>
         </ul>
     </footer>
-    {% endblock content%}
+    {% endblock content %}
