@@ -1,4 +1,5 @@
 {% extends "../base.html" %}
+{% load static %}
 
 {% block title %}
     login
@@ -19,17 +20,23 @@
                 <h1 class="text-4xl font-semibold text-center ">
                     Log In
                 </h1>
-                <div class=" text-center my-4">
-                    <p class="text-primary_red ">
-                        Wrong credentials
-                    </p>
-                   
+                {% if form.errors %}
+
+                <div class="text-center my-4 text-primary_red">
+                
+                <p class="text-primary_red">
+
+                    {{form.non_feild_errors}}
+
+                </p>
                 </div>
+                {% endif %}    
+
                 <div> 
                     <Label class='text-lg font-medium mb-3'>
                         Email
                     </Label>
-                    <input class="p-2 bg-gray-200 rounded-sm text-gray-900 outline-none block w-full" type="email" name="email" id="id_email" placeholder="Your Email">
+                    <input class="p-2 bg-gray-200 rounded-sm text-gray-900 outline-none block w-full" type="email" name="login" id="id_login" placeholder="Your Email">
                 </div>
                 <div class='my-3'> 
                     <Label class='text-lg font-medium mb-3'>
@@ -42,6 +49,10 @@
                         Log In
                     </button>
                 </div>
+
+                {% if redirect_feild_value %}
+                <input type="hidden" name = "{{ redirect_feild_name}}" value="{{redirect_feild_value}}" />
+                {% endif %}
 
                 <div class="text-center my-4">
                     <p>
