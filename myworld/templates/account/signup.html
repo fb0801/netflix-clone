@@ -12,17 +12,9 @@ Sign Up
     {% endblock others %}
 
     {% block content %}
-    <nav class="flex justify-between items-center py-3 px-4 fixed w-full z-50">
-        <div class="w-6/12">
-            <img src="assets/netflix.png" alt="logo" class="w-5/12 md:w-2/12">
-        </div>
+    
+    {% include "../partials/navbar.html" %}
 
-        <div>
-            <button class='bg-primary_red py-1 px-3 text-white md:text-lg rounded-md'>
-                Sign In 
-            </button>
-        </div>
-    </nav>
     <header class="min-h-screen w-full bg-black bg-opacity-75 showcase relative border-gray-600 border-b-8 flex justify-center py-20 bg-no-repeat"  style="background-image: url('{% static 'background_netflix.jpg' %} );">
         <div class="z-10 min-h-full py-32 md:py-0 text-gray-100 w-6/12  flex items-center flex-col">
             <form class="bg-black bg-opacity-70 min-h-full py-8 px-4 w-8/12 rounded-md" >
