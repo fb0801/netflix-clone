@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Netflix clone {% block title %}{% endblock title %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static "style.css" %}">
+        {% block others %}{% endblock others %}
+    </head>
+    <body class="bg-black text-gray-100 font-primary">
+        {% block content %}
+
+        {% endblock content %}
+        
+        <script>
+            const nav = document.querySelector('nav')
+
+            document.addEventListner("scroll", e=> {
+                if(scrollY > 100){
+                    nav.classList.add('bg-gray-900')
+                }else {
+                    nav.classList.remove('bg-gray-900')
+                }
+            })
+
+        
+        </script>
+    
+    </body>
+</html>
