@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-# Create your views here.
+from .forms import ProfileForm
 
 class Home(View):
     def get(self, request, *args, **kwargs):
@@ -22,5 +22,8 @@ class ProfileList(View):
 class ProfileCreate(View):
     def get(self, request, *args, **kwargs):
         #form for creating profile
+        form=ProfileForm
 
-        return render(request, 'profileCreate.html')
+        return render(request, 'profileCreate.html', {
+            'form':form
+        })
