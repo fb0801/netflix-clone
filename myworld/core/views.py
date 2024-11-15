@@ -1,3 +1,4 @@
+from core.models import Profile
 from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth.decorators import login_required
@@ -23,6 +24,17 @@ class ProfileCreate(View):
     def get(self, request, *args, **kwargs):
         #form for creating profile
         form=ProfileForm
+
+        return render(request, 'profileCreate.html', {
+            'form':form
+        })
+    
+    def post(self, request, *args, **kwargs):
+        form=ProfileForm(request.POST or None)
+
+        if form.is_valid():
+            #print(form.cleaned_datal)
+            profile = Profile.objects.create(**form.cleaned_data)
 
         return render(request, 'profileCreate.html', {
             'form':form
