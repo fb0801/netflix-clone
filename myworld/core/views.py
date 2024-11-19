@@ -19,7 +19,7 @@ class ProfileList(View):
             'profiles':profiles         
                       })
     
-
+@method_decorator(login_required, name='dispatch')
 class ProfileCreate(View):
     def get(self, request, *args, **kwargs):
         #form for creating profile
@@ -35,6 +35,9 @@ class ProfileCreate(View):
         if form.is_valid():
             #print(form.cleaned_datal)
             profile = Profile.objects.create(**form.cleaned_data)
+            if profile:
+                request.user.profiles.add(profile)
+                return redirect('core:profile_list')
 
         return render(request, 'profileCreate.html', {
             'form':form
