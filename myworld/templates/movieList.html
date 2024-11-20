@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix - Profile</title>
-    <link rel="stylesheet" href="style.css">
+
+{% extends 'base.html' %}
+{% block title %}
+Enjoy Netflix
+{% endblock title %}
+
+{% block others %}
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-</head>
+{% endblock others %}
+
+{% block content %}
+{% include 'partials/navbar.html' %}
+
 <body class='font-primary'>
     <nav class="flex justify-between items-center py-3 px-4 fixed w-full z-50">
         <div class="w-6/12">
@@ -85,5 +88,4 @@
         </section>
         
     </main>
-</body>
-</html>
+{% endblock content %}
