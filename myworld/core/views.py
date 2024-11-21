@@ -60,6 +60,7 @@ class Watch(View):
             return redirect(to='core:profile_list')
 
 
+@method_decorator(login_required, name='dispatch')
 class ShowMovieDetail(View):
      def get(self, request, movie_id, *args, **kwargs):
         try:
