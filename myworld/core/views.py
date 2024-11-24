@@ -80,7 +80,7 @@ class ShowMovie(View):
              movie = movie.videos.values()
 
              return render(request, 'showMovie.html',{
-                 'movie':movie
+                 'movie':list(movie)
              })
         except Movie.DoesNotExist:
             return redirect(to='core:profile_list')
